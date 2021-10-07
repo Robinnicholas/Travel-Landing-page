@@ -74,13 +74,19 @@ header li, header a{
 
 header > nav{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     padding: 56px 167px 56px 191px;
     z-index: 2;
 }
 
-header > nav img.logo{
+header a.logo{
+    position: fixed;
+    margin: 56px 167px 56px 191px;
+    z-index: 3;
+}
+
+header a.logo > img{
     display: block;
 }
 
@@ -93,9 +99,14 @@ nav ul li:nth-last-child(1){
     padding-right: 0;
 }
 
-nav ul li:nth-child(1){
-    padding-left: 0;
+.hide{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: #1518248c;
 }
+
 
 .open-nav,
 .close-navbar{
@@ -109,9 +120,9 @@ nav ul li:nth-child(1){
 }
 .hero-content{
     position: absolute;
-    left: 191px;
     top: 45%;
     transform: translateY(-50%);
+    padding-left: 100px;
 }
 
 .hero-content h1{
@@ -136,7 +147,6 @@ label{
     display: inline-block;
     position: relative;
     margin-right: 16px;
-    padding-left: calc(16px + 8px);
     cursor: pointer;
 }
 
@@ -150,7 +160,7 @@ label{
     top: 50%;
     margin-top: -8px;
     border: 1px solid #fff;
-    border-radius: 8px;
+    border-radius: 50%;
 }
 
  label:after{
@@ -163,7 +173,7 @@ label{
     left: 8px;
     margin-top: 0;
     background: #fff;
-    border-radius: 4px;
+    border-radius: 50%;
     transition: .2s ease-in-out;    
 }
 
@@ -189,20 +199,27 @@ input:checked + label:after{
     border-top: none;
     color: #ffffff;
     font-size: 20px;
-    transform: translateX(-23px);
 }
 
 .custom-input:focus{
     outline: none;
 }
 
+.custom-input:focus + .placeholder-text{
+    transform: translate(-20px,-33px);
+    transition: .25s ;
+}
+
 .placeholder-text{
+    width: 100%;
     color: #ffffff;
     font-size: 18px;
     line-height: 24px;
     letter-spacing: 0;
     position: absolute;
-    transform: translate(45px, 20px);
+    left: 40px;
+    top: 20px;
+    z-index: -1;
 }
 /* custom-input ends*/
 /* cta  */
@@ -236,7 +253,7 @@ a.search{
 }
 
 .benefits .container ul li{
-    max-width: 316px;
+    width: 28%;
 }
 
 .benefits .container ul li img{
@@ -261,32 +278,18 @@ a.search{
     line-height: 24px;
     text-decoration: none;
 }
-.benefits .container ul li a .bi-arrow-right{
+.benefits .container ul li a .fa-long-arrow-alt-right{
     color: #006dfe;
     font-size: 16px;
     margin-left: 26px;
 }
 
-@media (max-width:1043px){
-    a.search{
-        margin-top: 20px;
-    }
-    .benefits .container ul{
-        flex-direction: column;
-        align-items: center;
-    }
-    .benefits .container ul li:nth-of-type(2n){
-        margin: 20px 0;
-    }
-}
 /* tablet  */
 
 @media (min-width:1750px){
     .hero-content{
         position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%,-50%);
+        top: 45%;
     }
 }
 
@@ -319,7 +322,23 @@ a.search{
         flex-direction: column;        
         transition: 0.25s;  
     }
-   
+
+    .header-wrapper{
+        overflow: auto;
+        background-color: #1518248c;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+    }
+
+    header a.logo{
+        position: absolute;
+        padding: 0;
+        margin: 25px;
+    }
+
     nav ul li{
         padding:20px 0;
     }
@@ -327,7 +346,8 @@ a.search{
     .close-navbar{
         display: block;
         position: absolute;
-        right: 10%;
+        right: 9%;
+        top:3%;
     }
 
     .open-nav{
@@ -340,6 +360,7 @@ a.search{
     .hide{
         width: 0;
         padding: 0;
+        left: unset;
         transition: 0.25s;
     }
 
@@ -352,12 +373,6 @@ a.search{
     .hero{
         height:100vh;
     }
-    .hero-content{
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%,-50%);
-    }
 
     .hero-form label,.custom-input{
         width: 297px;
@@ -367,6 +382,18 @@ a.search{
         background-color: #ffffff;
         position: static;
         box-shadow: 0 2px 20px rgba(21, 24, 36, 0.16);
+    }
+
+    .benefits .container ul{
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .benefits .container ul li{
+        width: 60%;
+    }
+    .benefits .container ul li:nth-of-type(2n){
+        margin: 20px 0;
     }
 }
 
@@ -391,6 +418,12 @@ a.search{
 }
 
 @media (max-width:572px){
+    .hero-content{
+        padding: 0 25px;
+    }
+    .benefits .container{
+        padding: 46px 25px;
+    }
     .hero-form label,.custom-input{
         width: 250px;
     }
