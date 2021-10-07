@@ -50,7 +50,7 @@ table {
  /* css reset end  */
  /* default */
 .container{
-    max-width: 1260px;
+    max-width: 1262px;
     margin: 0 auto;
 }
 
@@ -64,7 +64,7 @@ header{
     background-position: center;
 }
 
-header li,a{
+header li, header a{
     font-weight: 400;
     font-size: 18px;
     line-height: 24px;
@@ -215,9 +215,68 @@ a.search{
     vertical-align: -webkit-baseline-middle;
 }
 
+/* benefits section */
+.benefits > .container{
+    background-color: #ffffff;
+    padding: 93px 63px 112px 100px;
+    position: relative;
+    bottom: 245px;
+    box-shadow: 0 2px 20px rgba(21, 24, 36, 0.16);
+}
+.benefits h2{
+    line-height: 42px;
+    color: #102746;
+    font-size: 35px;
+    margin-bottom: 120px;
+}
+
+.benefits .container ul{
+    display: flex;
+    justify-content: space-between;
+}
+
+.benefits .container ul li{
+    max-width: 316px;
+}
+
+.benefits .container ul li img{
+    margin-bottom: 37px ;
+}
+.benefits .container ul li h5{
+    color: #000000;
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 26px;
+}
+.benefits .container ul li p{
+    width: 100%;
+    color: #000000;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 39px;
+}
+.benefits .container ul li a{
+    color: #006dfe;
+    font-size: 16px;
+    line-height: 24px;
+    text-decoration: none;
+}
+.benefits .container ul li a .bi-arrow-right{
+    color: #006dfe;
+    font-size: 16px;
+    margin-left: 26px;
+}
+
 @media (max-width:1043px){
     a.search{
         margin-top: 20px;
+    }
+    .benefits .container ul{
+        flex-direction: column;
+        align-items: center;
+    }
+    .benefits .container ul li:nth-of-type(2n){
+        margin: 20px 0;
     }
 }
 /* tablet  */
@@ -302,6 +361,12 @@ a.search{
 
     .hero-form label,.custom-input{
         width: 297px;
+    }
+
+    .benefits > .container{
+        background-color: #ffffff;
+        position: static;
+        box-shadow: 0 2px 20px rgba(21, 24, 36, 0.16);
     }
 }
 
