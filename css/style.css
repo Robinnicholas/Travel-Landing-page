@@ -50,7 +50,7 @@ table {
  /* css reset end  */
  /* default */
 .container{
-    max-width: 1262px;
+    max-width: 1264px;
     margin: 0 auto;
 }
 
@@ -233,6 +233,9 @@ a.search{
 }
 
 /* benefits section */
+.benefits{
+    height: 550px;
+}
 .benefits > .container{
     background-color: #ffffff;
     padding: 93px 63px 112px 100px;
@@ -284,12 +287,96 @@ a.search{
     margin-left: 26px;
 }
 
+/* gallery section  */
+.gallery h2{
+    font-size: 35px;
+    color: #102746;
+    letter-spacing: 0;
+    margin-bottom: 46px;
+}
+
+.gallery h2::before{
+    content: "";
+    width: 253px;
+    height: 47px;
+    position: absolute;
+    border-bottom: 2px solid #006dfe;
+}
+
+.gallery .container .wrapper a{
+    color: #006dfe;
+    font-size: 16px;
+    line-height: 24px;
+    text-decoration: none;
+}
+
+.gallery .container .wrapper a .fa-long-arrow-alt-right{
+    color: #006dfe;
+    font-size: 16px;
+    margin-left: 26px;
+}
+
+.gallery .container .wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
+.gallery .container ul li{
+    /* display: inline-block; */
+    float: left;
+    position: relative;
+}
+
+.gallery .container ul li:nth-of-type(1){
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.gallery .container ul li:nth-of-type(2){
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+
+.gallery .container ul li:nth-of-type(3){
+    margin-top: 5px;
+}
+
+.gallery .container ul li:nth-of-type(4){
+    margin: 5px 10px 0 10px;
+}
+
+.gallery .container ul li:nth-of-type(5){
+    margin-top: 5px;
+}
+
+.gallery .container ul li .overlay{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(21, 24, 36, 0.4);
+    position: absolute;
+    z-index: 1;
+}
+
+.gallery .container ul li img{
+    display: block;
+}
+
+.gallery .container ul li img + p{
+    position: absolute;
+    color: #ffffff;
+    bottom: 27px;
+    left: 29px;
+    font-size: 50px;
+    font-weight: 700;
+    z-index: 1;
+}
+
 /* tablet  */
 
 @media (min-width:1750px){
     .hero-content{
         position: absolute;
-        top: 45%;
+        top: calc(962px - 725px + 136px);
     }
 }
 
