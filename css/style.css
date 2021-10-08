@@ -326,7 +326,6 @@ a.search{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-content: space-around;
 }
 
 .gallery .container ul li{
@@ -382,7 +381,7 @@ a.search{
 @media (min-width:1750px){
     .hero-content{
         position: absolute;
-        top: calc(962px - 725px + 136px);
+        top: calc(962px - 675px + 136px);
     }
 }
 
@@ -471,6 +470,10 @@ a.search{
         width: 297px;
     }
 
+    .benefits{
+        height: auto;
+    }
+
     .benefits > .container{
         background-color: #ffffff;
         position: static;
@@ -487,6 +490,31 @@ a.search{
     }
     .benefits .container ul li:nth-of-type(2n){
         margin: 20px 0;
+    }
+
+    .gallery{
+        padding: 75px 25px;
+    }
+
+    .gallery .container ul{
+        align-items: center;
+    }
+}
+
+@media (max-width:1264px){
+    .gallery .container ul {
+        overflow: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .gallery .container ul li img{
+        width: 100%;
+    }
+    .gallery .container ul li{
+        margin: 10px 0 0 0 !important;
     }
 }
 
@@ -508,6 +536,10 @@ a.search{
         font-size: 14px;
         line-height: 22px;
     }
+    .gallery .container .wrapper{
+        flex-direction: column;
+        margin-bottom: 25px;
+    }
 }
 
 @media (max-width:572px){
@@ -519,5 +551,22 @@ a.search{
     }
     .hero-form label,.custom-input{
         width: 250px;
+    }
+    .gallery h2{
+        font-size: 22px;
+        margin-bottom: 32px;
+    }
+    
+    .gallery h2::before{
+        content: "";
+        width: 150px;
+        height: 47px;
+        position: absolute;
+        border-bottom: 2px solid #006dfe;
+    }
+    .gallery .container ul li img + p {
+        bottom: 13px;
+        left: 10px;
+        font-size: 28px;
     }
 }
