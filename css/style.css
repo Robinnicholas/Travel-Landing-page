@@ -321,9 +321,15 @@ a.search{
     justify-content: space-between;
 }
 
+.gallery .container ul{
+    overflow: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-around;
+}
+
 .gallery .container ul li{
-    /* display: inline-block; */
-    float: left;
     position: relative;
 }
 
@@ -355,7 +361,7 @@ a.search{
     background-color: rgba(21, 24, 36, 0.4);
     position: absolute;
     z-index: 1;
-}
+} 
 
 .gallery .container ul li img{
     display: block;
