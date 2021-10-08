@@ -4,17 +4,14 @@ function customInputchange(){
 
     for(let i = 0; i< customInputs.length ; i++){
         customInputs[i].addEventListener("focusin", () => {
-            if(!customInputs[i].value){
-                customInputs[i].parentElement.previousElementSibling.checked = "true";
-                
-            }
-        })
-        customInputs[i].addEventListener("focusout", () => {
-            if(customInputs[i].value){
-                console.log("value is present");
+            customInputs[i].parentElement.previousElementSibling.checked = "true";
+            customInputs[i].addEventListener('input', () => {
                 placeHolderTexts[i].style.transform = "translate(-20px,-33px)";
-            }
-        })
+                if(!customInputs[i].value){
+                    placeHolderTexts[i].style.transform = "translate(0)";
+                }
+            });
+        });
     }
 }
 
