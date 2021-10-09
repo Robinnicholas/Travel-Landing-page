@@ -120,7 +120,7 @@ nav ul li:nth-last-child(1){
 }
 .hero-content{
     position: absolute;
-    top: 45%;
+    top: calc(100vh - 56vh);
     transform: translateY(-50%);
     padding-left: 100px;
 }
@@ -139,7 +139,7 @@ nav ul li:nth-last-child(1){
     line-height: 24px;
     font-weight: 400;
     letter-spacing: 0;
-    margin-bottom: 37px;
+    margin-bottom: 57px;
 }
 
 /* hero-form radio */
@@ -199,6 +199,7 @@ input:checked + label:after{
     border-top: none;
     color: #ffffff;
     font-size: 20px;
+    margin-right: 40px;
 }
 
 .custom-input:focus{
@@ -234,7 +235,7 @@ a.search{
 
 /* benefits section */
 .benefits{
-    height: 550px;
+    height: 500px;
 }
 .benefits > .container{
     background-color: #ffffff;
@@ -288,6 +289,10 @@ a.search{
 }
 
 /* gallery section  */
+.gallery{
+    padding: 65px 0;
+}
+
 .gallery h2{
     font-size: 35px;
     color: #102746;
@@ -376,6 +381,154 @@ a.search{
     z-index: 1;
 }
 
+/* best places  */
+.best-places{
+    padding: 65px 0;
+}
+
+.best-places > .container ul{
+    display: flex;
+    justify-content: space-between;
+}
+
+.best-places > .container ul:nth-of-type(1){
+    margin-bottom: 77px;
+}
+
+.best-places > .container ul li h3,
+.best-places > .container ul li h2{
+    font-size: 30px;
+    line-height: 40px;
+    color: #102746;
+}
+
+.best-places > .container > ul li.places-content{
+    padding: 26px 45px;
+    width: 47%;
+}
+
+.best-places > .container ul li h2{
+    margin-bottom: 45px;
+}
+
+.best-places > .container ul li p{
+    font-size: 16px;
+    line-height: 24px;
+    color: #102746;
+    margin-bottom: 58px;
+}
+
+.best-places > .container ul li a{
+    color: #006dfe;
+    font-size: 16px;
+    line-height: 24px;
+    text-decoration: none;
+}
+
+.best-places > .container ul li a .fa-long-arrow-alt-right{
+    color: #006dfe;
+    font-size: 16px;
+    margin-left: 26px;
+}
+
+/* top places to visit */
+
+.top-places-to-visit{
+    padding: 65px 25px;
+}
+
+.top-places-to-visit h2{
+    font-size: 35px;
+    color: #102746;
+    letter-spacing: 0;
+    margin-bottom: 64px;
+}
+
+.top-places-to-visit h2::before{
+    content: "";
+    width: 253px;
+    height: 47px;
+    position: absolute;
+    border-bottom: 2px solid #006dfe;
+}
+
+.top-places-to-visit .container ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.top-places-to-visit .container ul li{
+    max-width: 386px;
+    margin-bottom: 69px;
+}
+
+.top-places-to-visit .container ul li .card-show{
+    position: relative;
+}
+
+.top-places-to-visit .container ul li img{
+    width: 100%;
+}
+
+.top-places-to-visit .container ul li .overlay-wrapper{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(21, 24, 36, 0.6);
+    color: #ffffff;
+    position: absolute;
+    bottom: 47px;
+    right: 0;
+    left:0;
+    padding: 15px 25px;
+}
+
+.top-places-to-visit .container ul li img{
+    margin-bottom: 45px;
+}
+
+.top-places-to-visit .container ul li .overlay-wrapper .place-activities i{
+    margin-left: 10px;
+}
+
+.top-places-to-visit .container ul li .overlay-wrapper .place-activities i.fa-heart{
+    margin-right: 15px;
+}
+
+.top-places-to-visit .container ul li .overlay-wrapper .place-activities span,i{
+    font-size: 16px;
+}
+
+.top-places-to-visit .container ul li .overlay-wrapper .place-name{
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.top-places-to-visit .container ul li div + p{
+    font-size: 15px;
+    color: #102746;
+    line-height: 24px;
+    margin-bottom: 31px;
+}
+
+.top-places-to-visit .container ul li a{
+    font-size: 16px;
+    padding: 11px 19px;
+    background-color: #006dfe;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+/* video */
+
+.video iframe{
+    width: 100%;
+    height: 609px;
+}
+
+
+
+
 /* tablet  */
 
 @media (min-width:1750px){
@@ -398,6 +551,27 @@ a.search{
     a.search{
         margin-top: 0;
     }
+    .gallery .container ul li img + p {
+        bottom: 13px;
+        left: 10px;
+        font-size: 28px;
+    }
+    .benefits > .container {
+        bottom: 30%;
+    }
+
+    .best-places > .container ul{
+        flex-direction: column;
+        align-items: center;
+    }
+    .best-places > .container > ul li.places-content {
+        padding: 26px 45px;
+        width: 80%;
+    }
+    .best-places > .container ul:nth-of-type(1) {
+        margin-bottom: 0;
+    }
+
 }
 
 @media (max-width:992px){
@@ -511,14 +685,28 @@ a.search{
         align-items: center;
     }
     .gallery .container ul li img{
-        width: 100%;
+        width: 75vw;
     }
     .gallery .container ul li{
         margin: 10px 0 0 0 !important;
     }
 }
 
+@media (max-width:822px){
+    .top-places-to-visit .container ul{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 @media (max-width:768px){
+    
+    .hero-content{
+        position: absolute;
+        top: calc(100vh - 45vh);
+        transform: translateY(-50%);
+        padding-left: 100px;
+    }
     .hero-content h1{
         font-size: 38px;
         letter-spacing: 0;
@@ -539,6 +727,14 @@ a.search{
     .gallery .container .wrapper{
         flex-direction: column;
         margin-bottom: 25px;
+    }
+    .best-places > .container > ul li.places-content {
+        padding: 25px;
+        width: 100%;
+    }
+
+    .best-places > .container > ul li img {
+        width: 100%;
     }
 }
 
@@ -568,5 +764,56 @@ a.search{
         bottom: 13px;
         left: 10px;
         font-size: 28px;
+    }
+
+    .top-places-to-visit {
+        padding: 65px 10px;
+    }
+
+    .top-places-to-visit h2 {
+        font-size: 22px;
+        color: #102746;
+        letter-spacing: 0;
+        margin-bottom: 32px;
+    }
+    .top-places-to-visit h2::before {
+        content: "";
+        width: 150px;
+        height: 27px;
+        position: absolute;
+        border-bottom: 2px solid #006dfe;
+    }
+
+    .top-places-to-visit ul li{
+        width: 100%;
+    }
+
+}
+
+@media (max-width:425px){
+    .best-places {
+        padding: 30px 0;
+    }
+    .gallery {
+        padding: 35px 10px;
+    }
+
+    .gallery .container ul li img {
+        width:100%;
+    }
+
+    .hero-content h1{
+        font-size: 28px;
+        margin-bottom: 14px;
+    }
+
+    .hero-content p{
+        font-size: 12px;
+        margin-bottom: 22px;
+    }
+
+    a.search{
+        padding: 10px 24px;
+        font-size: 20px;
     }
 }
