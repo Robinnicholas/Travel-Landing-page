@@ -514,7 +514,7 @@ a.search{
 .top-places-to-visit .container ul li a{
     font-size: 16px;
     padding: 11px 19px;
-    background-color: #006dfe;
+    background-color: #006dfe; 
     text-decoration: none;
     color: #ffffff;
 }
@@ -526,9 +526,42 @@ a.search{
     height: 609px;
 }
 
+/* footer  */
+
+footer{
+    padding:118px 188px;
+    background-color: #0e1d28;
+    color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
 
 
+footer .footer-right > ul{
+    display: flex;
+}
 
+footer .footer-right > ul > li:nth-of-type(2){
+    margin: 8px 150px;
+}
+
+footer .footer-right > ul  li a{
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+footer .footer-right > ul  li{
+    margin: 8px 0;
+}
+
+.footer .footer-right h2{
+    font-size: 18px;
+    line-height: 24px;
+}
 /* tablet  */
 
 @media (min-width:1750px){
@@ -673,6 +706,10 @@ a.search{
     .gallery .container ul{
         align-items: center;
     }
+
+    footer{
+        padding: 60px 25px;
+    }
 }
 
 @media (max-width:1264px){
@@ -735,6 +772,22 @@ a.search{
 
     .best-places > .container > ul li img {
         width: 100%;
+    }
+
+    footer{
+        flex-direction: column;
+    }
+
+    footer .footer-right > ul {
+        flex-direction: column;
+    }
+
+    footer .footer-right > ul > li:nth-of-type(2) {
+        margin: 8px 0;
+    }
+
+    footer .footer-right > ul li{
+        margin: 16px 0;
     }
 }
 
