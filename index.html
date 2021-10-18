@@ -34,14 +34,14 @@
                     
                     <input name="option" id="click1" type="radio">
                     <label for="click1">
-                        <input type="text" class="custom-input"> 
-                        <span class="placeholder-text">What would you like to do?</span>
+                        <input type="text" class="custom-input" placeholder="What would you like to do?"> 
+                        <!-- <span class="placeholder-text">What would you like to do?</span> -->
                     </label>
                     
                     <input name="option" id="click2" type="radio">
                     <label for="click2">
-                        <input type="text" class="custom-input">
-                        <span class="placeholder-text">Where would you like to go?</span>
+                        <input type="text" class="custom-input" placeholder="Where would you like to go?">
+                        <!-- <span class="placeholder-text">Where would you like to go?</span> -->
                     </label>
                     
                     <a href="javascript:void(0)" class="search">Search</a>
@@ -81,20 +81,18 @@
                 <a href="javascript:void(0)" class="more-link">VIEW ALL <i class="fas fa-long-arrow-alt-right arrow-icons"></i></a>
             </div>
             <ul class="gallery-items">
-                <li class="item-details">
-                    <div class="overlay-gallery"></div>
+                <li class="item-details col-2">
                     <img 
                         src="images/mount-fuji.png" 
                         srcset="images/mount-fuji.png 619w,
                                 images/mount-fuji@2x.png 1238w,
                                 images/mount-fuji@3x.png 1857w"
-                        width="619" 
+                        width="619"
                         alt="mount-fuji"
                     />
-                    <p class="place-name-gallery">Mount Fuji</p>
+                    <h3 class="place-name-gallery">Mount Fuji</h3>
                 </li>
-                <li class="item-details">
-                    <div class="overlay-gallery"></div>
+                <li class="item-details col-2">
                     <img 
                         src="images/kyoto.png" 
                         srcset="images/kyoto.png 635w,
@@ -103,10 +101,9 @@
                         width="635" 
                         alt="Kyoto"
                     />
-                    <p class="place-name-gallery">Kyoto</p>
+                    <h3 class="place-name-gallery">Kyoto</h3>
                 </li>
-                <li class="item-details">
-                    <div class="overlay-gallery"></div>
+                <li class="item-details col-3">
                     <img 
                         src="images/tokyo.png" 
                         srcset="images/tokyo.png 415w,
@@ -115,10 +112,9 @@
                         width="415" 
                         alt="Tokyo" 
                     />
-                    <p class="place-name-gallery">Tokyo</p>
+                    <h3 class="place-name-gallery">Tokyo</h3>
                 </li>
-                <li class="item-details">
-                    <div class="overlay-gallery"></div>
+                <li class="item-details col-3">
                     <img 
                         src="images/niigata.png" 
                         srcset="images/niigata.png 415w,
@@ -127,10 +123,9 @@
                         width="415" 
                         alt="Niigata" 
                     />
-                    <p class="place-name-gallery">Niigata</p>
+                    <h3 class="place-name-gallery">Niigata</h3>
                 </li>
-                <li class="item-details">
-                    <div class="overlay-gallery"></div>
+                <li class="item-details col-3">
                     <img 
                         src="images/sapporo.png" 
                         srcset="images/sapporo.png 414w,
@@ -139,7 +134,7 @@
                         width="414" 
                         alt="Sapporo" 
                     />
-                    <p class="place-name-gallery">Sapporo</p>
+                    <h3 class="place-name-gallery">Sapporo</h3>
                 </li>
             </ul>
         </div>
@@ -147,42 +142,38 @@
 
     <section class="best-places">
         <div class="container">
-            <ul class="palce-name">
-                <li>
-                    <img 
-                        src="images/tottori.png" 
-                        srcset="images/tottori.png 597w,
-                                images/tottori@2x.png 1194w,
-                                images/tottori@3x.png 1791w"
-                        width="597" 
-                        alt="Tottori" 
-                    />
-                </li>
-                <li class="places-content">
-                    <h3 class="place-feature">Prefecture in Focus :</h3>
-                    <h2 class="place-heading">Tottori</h2>
+            <div class="palce-name">
+                <img 
+                    src="images/tottori.png" 
+                    srcset="images/tottori.png 597w,
+                            images/tottori@2x.png 1194w,
+                            images/tottori@3x.png 1791w"
+                    width="597"
+                    height="354" 
+                    alt="Tottori" 
+                />
+                <div class="place-content">
+                    <h3 class="place-feature">Prefecture in Focus : Tottori</h3>
                     <p class="place-description">Jump off balcony, onto stranger's head. Chase ball of string hide when guests come over. Being gorgeous with belly side up i could pee on this if i had the energy but under the bed, for attack the child, open the door, </p>
                     <a href="javascript:void(0)" class="more-link">VIEW PREFECTURE <i class="fas fa-long-arrow-alt-right arrow-icons"></i></a>
-                </li>
-            </ul>
-            <ul class="palce-name">
-                <li class="places-content">
-                    <h3 class="place-feature">Featured Neighborhood:</h3>
-                    <h2 class="place-heading">Kyoto’s Arashiyama</h2>
+                </div>
+            </div>
+            <div class="palce-name">
+                <div class="place-content">
+                    <h3 class="place-feature">Featured Neighborhood: Kyoto’s Arashiyama</h3>
                     <p class="place-description">Jump off balcony, onto stranger's head. Chase ball of string hide when guests come over. Being gorgeous with belly side up i could pee on this if i had the energy but under the bed, for attack the child, open the door, </p>
                     <a href="javascript:void(0)" class="more-link">VIEW NEIGHBORHOOD <i class="fas fa-long-arrow-alt-right arrow-icons"></i></a>
-                </li>
-                <li>
-                    <img 
-                        src="images/kyoto_arashiyama.png" 
-                        srcset="images/kyoto_arashiyama.png 597w,
-                                images/kyoto_arashiyama@2x.png 1194w,
-                                images/kyoto_arashiyama@3x.png 1791w"
-                        width="597" 
-                        alt="Kyoto Arashiyama" 
-                    />
-                </li>
-            </ul>
+                </div>
+                <img 
+                    src="images/kyoto_arashiyama.png" 
+                    srcset="images/kyoto_arashiyama.png 597w,
+                            images/kyoto_arashiyama@2x.png 1194w,
+                            images/kyoto_arashiyama@3x.png 1791w"
+                    width="597"
+                    height="354"
+                    alt="Kyoto Arashiyama" 
+                />
+            </div>
         </div>
     </section>
 

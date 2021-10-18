@@ -15,7 +15,6 @@ function customInputchange(){
         customInputs[i].addEventListener("change", () => {
             if(customInputs[i].value){
                 console.log("value present");
-                customInputs[i].value = '';
             }
         })
     }
