@@ -63,7 +63,6 @@ table {
     background-size: cover;
     background-position: center;
     position: relative;
-    z-index: 0;
 }
 
 header{
@@ -77,7 +76,7 @@ header{
     align-items: center;
     padding: 56px 50px;
     transition: .5s;
-    z-index: 2;
+    z-index: 1;
 }
 
 header.add-bg{
@@ -120,14 +119,13 @@ a.logo{
 .hero .container{
     height: calc(100vh - 143px);
     position: relative;
-    z-index: -1;
+    top:143px;
 }
 
 .hero-content{
     position: absolute;
-    top: 28vh;
+    top: calc(28vh - 143px);
     padding-left: 100px;
-    z-index: -1;
 }
 
 /* hero content */
@@ -153,81 +151,66 @@ a.logo{
 .hero-form{
     position: relative;
 }
-
-.survey{
-    display: inline-block;
-}
-
-.survey-item{
-    display: inline-block;
-    width: 350px;
-    position: relative;
-}
-
-.survey-item:hover{
-    cursor: pointer;
-}
-
-
-.radio-button{
-    display: block;
-}
-
 input[type="radio"]{
-    position: absolute;
-    opacity: 0;
-    margin: 0;
-    outline: 0;
     visibility: hidden;
+    position: absolute;
 }
 
-.radio{
-    display: inline-block;
+label[for*="click"]:before{
+    content: "";
+    position: absolute;
     width: 20px;
     height: 20px;
+    border-radius: 50%;
     border: 1px solid #ffffff;
-    border-radius: 50%;
-    position: relative;
-}
-
-input[type="radio"]:checked + .radio::after{
-    content: "";
     display: inline-block;
-    position: absolute;
-    left: 2px;
-    top: 2px;
-    width: 13px;
-    height: 13px;
-    border-radius: 50%;
-    background-color: #ffffff;
-}
+    transform: translateY(30px);
+}   
 
-input[type="radio"]:checked ~ .question{
-    bottom: 50px;
-}
-
-.custom-text-input{
-    position: relative;
-    right:20px ;
-    bottom: 5px;
+.custom-input{
+    width: 297px;
     padding: 20px 25px;
+    font-size: 20px;
+    color: #ffffff;
     background-color: transparent;
     border-top: none;
     border-left: none;
     border-right: none;
-    font-size: 18px;
-    color: #ffffff;
+    margin-right: 60px;
+}
+
+.custom-input:focus{
     outline: none;
 }
 
-.question{
+input[type="radio"]:checked + label::after{
+    display: inline-block;
+    content: "";
+    width: 12px;
+    height: 12px;
+    background-color: #ffffff;
     color: #ffffff;
-    font-size: 18px;    
+    border-radius: 50%;
     position: absolute;
-    right: 100px;
-    bottom: 30px;
+    top: 35px;
+    transform: translateX(-354px);
 }
 
+.placeholder-text{
+    width: 50%;
+    color:#ffffff;
+    font-size: 18px;
+    line-height: 24px;
+    position: absolute;
+    top: 28px;
+    transform: translateX(-320px);
+    transition: .3s;
+}
+
+input[type="radio"]:checked + label  .placeholder-text{
+    top: 0;
+    transition: .3s;
+}
 /* hero-form radio ends */
 
 /* cta  */
@@ -240,6 +223,7 @@ a.search{
     padding: 15px 39px;
     font-size: 24px;
     vertical-align: bottom;
+    margin-top: 20px;
 }
 
 /* dry */
@@ -287,10 +271,8 @@ a.search{
 }
 /* dry end */
 /* benefits section */
-.benefits{
-    height: 513px;
-}
-.benefits .container{
+
+.benefits.container{
     background-color: #ffffff;
     padding: 93px 63px 112px 100px;
     position: relative;
@@ -364,7 +346,6 @@ a.search{
     height: 100%;
     background-color: rgba(21, 24, 36, 0.4);
     position: absolute;
-    z-index: 1;
 } 
 
 .item-details img{
@@ -378,7 +359,6 @@ a.search{
     left: 29px;
     font-size: 50px;
     font-weight: 700;
-    z-index: 1;
 }
 
 /* best places  */
@@ -548,7 +528,6 @@ footer a{
         flex-direction: column;
         align-items: center;
         position: relative;
-        z-index: -1;
     }
     .item-details img{
         width: 75vw;
@@ -572,6 +551,40 @@ footer a{
         background-color: #0e1d28;
         padding: 25px 12px;
     }  
+    .hero-form *{
+        display: block;   
+    }
+
+    label[for*="click"]{
+        margin-bottom: 20px;
+    }
+
+    label[for*="click"]:before {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 1px solid #ffffff;
+        display: inline-block;
+        transform: translateY(20px);
+    }
+
+    label[for="click1"] .placeholder-text{
+        transform: translate(40px,-10px);
+    }
+    label[for="click2"] .placeholder-text{
+        transform: translate(40px,75px);
+    }
+    input[type="radio"]#click1:checked + label::after{
+        transform: translate(5px,-10px);
+    }
+    input[type="radio"]#click2:checked + label::after{
+        transform: translate(5px,75px);
+    }
+    a.search{
+        margin-top: 0;
+    }
     a.search{
         margin-top: 20px;
     }
@@ -579,23 +592,23 @@ footer a{
     .benefits{
         height: auto;
     }
-    .benefits .container{
-        background-color: #ffffff;
-        position: static;
-        box-shadow: 0 2px 20px rgba(21, 24, 36, 0.16);
-        padding: 50px 12px;
-    }
 
     .benefits-details{
         text-align: center;
         flex-direction: column;
         align-items: center;
     }
+    .benefits.container{
+        padding: 50px 12px;
+        bottom: 0;
+    }
+    .benefits h2 {
+        line-height: 42px;
+        margin-bottom: 60px;
+    }
     .benefits-items{
         width: 60%;
-    }
-    .benefits-items:nth-of-type(2n){
-        margin: 20px 0;
+        margin-bottom: 75px;
     }
     .palce-name{
         flex-direction: column;
@@ -632,21 +645,65 @@ footer a{
         background-color: #ffffff;
         margin: 5px;
     }
+    .hero-content{
+        padding:0 12px;
+    }
+
+    .hero-content h1{
+        max-width: 619px;
+        color: #ffffff;
+        font-size: 35px;
+        letter-spacing: 0;
+        margin-bottom: 18px;
+    }
+    .hero-content p{
+        max-width: 546px;
+        color: #ffffff;
+        font-size: 14px;
+        line-height: 24px;
+        font-weight: 400;
+        letter-spacing: 0;
+        margin-bottom: 20px;
+    }
+
+    label:nth-of-type(1){
+        margin-bottom: 20px;
+    }
+
+    .custom-input{
+        width: 230px;
+    }
+
+    .placeholder-text{
+        width: 75%;
+        font-size: 14px;
+    }
+    label[for="click2"] .placeholder-text{
+        transform: translate(40px,75px);
+    }
+    input[type="radio"]#click2:checked + label::after{
+        transform: translate(5px,75px);
+    }
+
+    a.search{
+        padding: 14px 20px;
+        font-size: 16px;
+    }
     body{
         overflow: auto;
     }
     header ul{
         position: absolute;
-        top: 80px;
+        top: 0;
         right: 0;
         background-color: #0e1d28;
-        height: calc(100vh - 80px);
+        height: 100vh;
         width: 320px;
         transform: translateX(100%);
         transition: .5s ease-out ;
-        z-index: 10;
         flex-direction: column;
         align-items: center;
+        padding-top: 75px;
     }
 
     .nav-items {
@@ -715,6 +772,7 @@ footer a{
         padding: 14px 20px;
         font-size: 16px;
     }
+    
     .wrapper{
         flex-direction: column;
         margin-bottom: 25px;
@@ -746,7 +804,10 @@ footer a{
 }
 
 @media (max-width:572px){
-    
+    .benefits-items{
+        width: 100%;
+        margin-bottom: 75px;
+    }
     .best-places {
         padding: 30px 0;
     }
@@ -799,24 +860,3 @@ footer a{
     }
 }
 
-@media screen and (max-width:375px) {
-    .radio{
-        top:40px;
-        left: 10px;   
-    }
-    .survey-item {
-        display: inline-block;
-        width: 250px;
-        position: relative;
-    }   
-    .custom-text-input{
-        margin: 0 0 0 25px;
-    }
-    .question{
-        width: 100%;
-        right: -50px;
-    }
-    a.search{
-        display: inline-block;
-    }
-}

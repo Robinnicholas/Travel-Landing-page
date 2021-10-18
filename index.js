@@ -5,6 +5,21 @@ function navigation(){
     nav.classList.replace("show-on-mobile", "hide-on-mobile");
 }
 
+function customInputchange(){
+    let customInputs = document.querySelectorAll(".custom-input");
+    for(let i = 0; i < customInputs.length ; i++){
+        customInputs[i].addEventListener("click", () => {
+            customInputs[i].parentElement.previousElementSibling.checked = true;
+        })
+        
+        customInputs[i].addEventListener("change", () => {
+            if(customInputs[i].value){
+                console.log("value present");
+                customInputs[i].value = '';
+            }
+        })
+    }
+}
 
 function headerScroll(){
     window.addEventListener('scroll', () => {
@@ -20,5 +35,6 @@ function headerScroll(){
 }
 
 window.addEventListener('load', () => {
+    customInputchange();    
     headerScroll();
 })
