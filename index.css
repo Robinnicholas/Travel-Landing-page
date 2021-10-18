@@ -75,37 +75,41 @@ header{
     justify-content: space-between;
     background-color: transparent;
     align-items: center;
-    padding: 56px 167px 56px 191px;
+    padding: 56px 50px;
     transition: .5s;
+    z-index: 2;
 }
 
 header.add-bg{
     transition: .5s;
     background-color: #0e1d28;
-    padding: 25px 167px 25px 191px;
+    padding: 25px 50px;
 }
 
-header > a{
+a.logo{
     display: inline-block;
 }
 
-header > a > img{
+.logo img{
     display: block;
 }
 
-header ul{
+.nav-links{
     display: flex;
 }
 
-header ul li a{
+.nav-items{
+    margin: 0 41px;
+}
+
+.nav-items a {
     text-decoration: none;
     font-size: 18px;
-    padding: 0 41px;
     color: #ffffff;
 }
 
-header ul li:nth-last-child(1) a{
-    padding-right: 0;
+.nav-items:last-child{
+    margin-right: 0;
 }
 
 .burger{
@@ -149,67 +153,81 @@ header ul li:nth-last-child(1) a{
 .hero-form{
     position: relative;
 }
-input[type="radio"]{
-    visibility: hidden;
-    position: absolute;
+
+.survey{
+    display: inline-block;
 }
 
-label[for*="click"]:before{
-    content: "";
+.survey-item{
+    display: inline-block;
+    width: 350px;
+    position: relative;
+}
+
+.survey-item:hover{
+    cursor: pointer;
+}
+
+
+.radio-button{
+    display: block;
+}
+
+input[type="radio"]{
     position: absolute;
+    opacity: 0;
+    margin: 0;
+    outline: 0;
+    visibility: hidden;
+}
+
+.radio{
+    display: inline-block;
     width: 20px;
     height: 20px;
-    border-radius: 50%;
     border: 1px solid #ffffff;
-    display: inline-block;
-    transform: translateY(30px);
-}   
+    border-radius: 50%;
+    position: relative;
+}
 
-.custom-input{
-    width: 297px;
+input[type="radio"]:checked + .radio::after{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background-color: #ffffff;
+}
+
+input[type="radio"]:checked ~ .question{
+    bottom: 50px;
+}
+
+.custom-text-input{
+    position: relative;
+    right:20px ;
+    bottom: 5px;
     padding: 20px 25px;
-    font-size: 20px;
-    color: #ffffff;
     background-color: transparent;
     border-top: none;
     border-left: none;
     border-right: none;
-    margin-right: 60px;
-}
-
-.custom-input:focus{
+    font-size: 18px;
+    color: #ffffff;
     outline: none;
 }
 
-input[type="radio"]:checked + label::after{
-    display: inline-block;
-    content: "";
-    width: 12px;
-    height: 12px;
-    background-color: #ffffff;
+.question{
     color: #ffffff;
-    border-radius: 50%;
+    font-size: 18px;    
     position: absolute;
-    top: 35px;
-    transform: translateX(-355px);
+    right: 100px;
+    bottom: 30px;
 }
 
-.placeholder-text{
-    width: 50%;
-    color:#ffffff;
-    font-size: 18px;
-    line-height: 24px;
-    position: absolute;
-    top: 28px;
-    transform: translateX(-320px);
-    z-index: -1;
-    transition: .3s;
-}
-
-input[type="radio"]:checked + label  .placeholder-text{
-    top: 0;
-    transition: .3s;
-}
 /* hero-form radio ends */
 
 /* cta  */
@@ -222,62 +240,80 @@ a.search{
     padding: 15px 39px;
     font-size: 24px;
     vertical-align: bottom;
-    margin-top: 20px;
 }
 
-/* benefits section */
-.benefits{
-    height: 513px;
-}
-.benefits > .container{
-    background-color: #ffffff;
-    padding: 93px 63px 112px 100px;
-    position: relative;
-    bottom: 20vh;
-    box-shadow: 0 2px 20px rgba(21, 24, 36, 0.16);
-}
-.benefits h2{
-    line-height: 42px;
+/* dry */
+.heading{
     color: #102746;
     font-size: 35px;
-    margin-bottom: 120px;
+    letter-spacing: 0;
+    margin-bottom: 46px;
 }
-
-.benefits .container ul{
-    display: flex;
-    justify-content: space-between;
+.heading-underline{
+    position: relative;
+    padding-bottom: 12px;
 }
-
-.benefits .container ul li{
-    width: 28%;
+.heading-underline::before{
+    content: "";
+    width: 253px;
+    height: 3px;
+    position: absolute;
+    border-bottom: 2px solid #006dfe;
+    bottom: 0;
 }
-
-.benefits .container ul li img{
-    margin-bottom: 37px ;
+.more-link{
+    color: #006dfe;
+    font-size: 16px;
+    line-height: 24px;
+    text-decoration: none;
 }
-.benefits .container ul li h5{
+.arrow-icons{
+    color: #006dfe;
+    font-size: 16px;
+    margin-left: 26px;
+}
+.benefits-subheading{
     color: #000000;
     font-size: 18px;
     line-height: 24px;
     margin-bottom: 26px;
 }
-.benefits .container ul li p{
+.benefits-description{
     width: 100%;
     color: #000000;
     font-size: 16px;
     line-height: 24px;
     margin-bottom: 39px;
 }
-.benefits .container ul li a{
-    color: #006dfe;
-    font-size: 16px;
-    line-height: 24px;
-    text-decoration: none;
+/* dry end */
+/* benefits section */
+.benefits{
+    height: 513px;
 }
-.benefits .container ul li a .fa-long-arrow-alt-right{
-    color: #006dfe;
-    font-size: 16px;
-    margin-left: 26px;
+.benefits .container{
+    background-color: #ffffff;
+    padding: 93px 63px 112px 100px;
+    position: relative;
+    bottom: 20vh;
+    box-shadow: 0 2px 20px rgba(21, 24, 36, 0.16);
+}
+
+.benefits h2{
+    line-height: 42px;
+    margin-bottom: 120px;
+}
+
+.benefits-details{
+    display: flex;
+    justify-content: space-between;
+}
+
+.benefits-items{
+    width: 28%;
+}
+
+.benefits-items img{
+    margin-bottom: 37px ;
 }
 
 /* gallery section  */
@@ -285,75 +321,45 @@ a.search{
     padding: 65px 0;
 }
 
-.gallery h2{
-    font-size: 35px;
-    color: #102746;
-    letter-spacing: 0;
-    margin-bottom: 46px;
-}
-
-.gallery h2::before{
-    content: "";
-    width: 253px;
-    height: 47px;
-    position: absolute;
-    border-bottom: 2px solid #006dfe;
-    z-index: -1;
-}
-
-.gallery .container .wrapper a{
-    color: #006dfe;
-    font-size: 16px;
-    line-height: 24px;
-    text-decoration: none;
-}
-
-.gallery .container .wrapper a .fa-long-arrow-alt-right{
-    color: #006dfe;
-    font-size: 16px;
-    margin-left: 26px;
-}
-
-.gallery .container .wrapper{
+.gallery .wrapper{
     display: flex;
     justify-content: space-between;
 }
 
-.gallery .container ul{
+.gallery-items{
     overflow: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.gallery .container ul li{
+.item-details{
     position: relative;
-    z-index: -1;
 }
 
-.gallery .container ul li:nth-of-type(1){
+.item-details:nth-of-type(1){
     margin-right: 5px;
     margin-bottom: 5px;
 }
 
-.gallery .container ul li:nth-of-type(2){
+.item-details:nth-of-type(2){
     margin-left: 5px;
     margin-bottom: 5px;
 }
 
-.gallery .container ul li:nth-of-type(3){
+.item-details:nth-of-type(3){
     margin-top: 5px;
 }
 
-.gallery .container ul li:nth-of-type(4){
+.item-details:nth-of-type(4){
     margin: 5px 10px 0 10px;
 }
 
-.gallery .container ul li:nth-of-type(5){
+.item-details:nth-of-type(5){
     margin-top: 5px;
 }
 
-.gallery .container ul li .overlay{
+.overlay-gallery{
     width: 100%;
     height: 100%;
     background-color: rgba(21, 24, 36, 0.4);
@@ -361,11 +367,11 @@ a.search{
     z-index: 1;
 } 
 
-.gallery .container ul li img{
+.item-details img{
     display: block;
 }
 
-.gallery .container ul li img + p{
+.place-name-gallery{
     position: absolute;
     color: #ffffff;
     bottom: 27px;
@@ -380,49 +386,36 @@ a.search{
     padding: 65px 0;
 }
 
-.best-places > .container ul{
+.palce-name{
     display: flex;
     justify-content: space-between;
 }
 
-.best-places > .container ul:nth-of-type(1){
+.palce-name:nth-of-type(1){
     margin-bottom: 77px;
 }
 
-.best-places > .container ul li h3,
-.best-places > .container ul li h2{
+.place-feature,
+.place-heading{
     font-size: 30px;
     line-height: 40px;
     color: #102746;
 }
 
-.best-places > .container > ul li.places-content{
+.places-content{
     padding: 26px 45px;
     width: 47%;
 }
 
-.best-places > .container ul li h2{
+.place-heading{
     margin-bottom: 45px;
 }
 
-.best-places > .container ul li p{
+.place-description{
     font-size: 16px;
     line-height: 24px;
     color: #102746;
     margin-bottom: 58px;
-}
-
-.best-places > .container ul li a{
-    color: #006dfe;
-    font-size: 16px;
-    line-height: 24px;
-    text-decoration: none;
-}
-
-.best-places > .container ul li a .fa-long-arrow-alt-right{
-    color: #006dfe;
-    font-size: 16px;
-    margin-left: 26px;
 }
 
 /* top places to visit */
@@ -431,43 +424,31 @@ a.search{
     padding: 65px 25px;
 }
 
-.top-places-to-visit h2{
-    font-size: 35px;
-    color: #102746;
-    letter-spacing: 0;
+.top-places-to-visit h2.heading{
     margin-bottom: 64px;
 }
 
-.top-places-to-visit h2::before{
-    content: "";
-    width: 253px;
-    height: 47px;
-    position: absolute;
-    border-bottom: 2px solid #006dfe;
-    z-index: -1;
-}
-
-.top-places-to-visit .container ul{
+.places-card{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.top-places-to-visit .container ul li{
+.card-item{
     max-width: 386px;
     margin-bottom: 69px;
 }
 
-.top-places-to-visit .container ul li .card-show{
+.card-show{
     position: relative;
-    z-index: -1;
 }
 
-.top-places-to-visit .container ul li img{
+.top-places-to-visit img{
     width: 100%;
+    margin-bottom: 45px;
 }
 
-.top-places-to-visit .container ul li .overlay-wrapper{
+.overlay-wrapper{
     display: flex;
     justify-content: space-between;
     background-color: rgba(21, 24, 36, 0.6);
@@ -479,35 +460,32 @@ a.search{
     padding: 15px 25px;
 }
 
-.top-places-to-visit .container ul li img{
-    margin-bottom: 45px;
-}
-
-.top-places-to-visit .container ul li .overlay-wrapper .place-activities i{
+.place-activities i.fas{
     margin-left: 10px;
 }
 
-.top-places-to-visit .container ul li .overlay-wrapper .place-activities i.fa-heart{
+.place-activities i.fa-heart{
     margin-right: 15px;
 }
 
-.top-places-to-visit .container ul li .overlay-wrapper .place-activities span,i{
+.place-activities span,
+.place-activities i{
     font-size: 16px;
 }
 
-.top-places-to-visit .container ul li .overlay-wrapper .place-name{
+.place-name{
     font-size: 18px;
     text-transform: uppercase;
 }
 
-.top-places-to-visit .container ul li div + p{
+.card-item .description{
     font-size: 15px;
     color: #102746;
     line-height: 24px;
     margin-bottom: 31px;
 }
 
-.top-places-to-visit .container ul li a{
+.card-item a.see-more{
     font-size: 16px;
     padding: 11px 19px;
     background-color: #006dfe; 
@@ -518,7 +496,7 @@ a.search{
 /* video */
 .video iframe{
     width: 100%;
-    height: 609px;
+    height: 610px;
 }
 
 /* footer  */
@@ -534,31 +512,35 @@ footer{
 }
 
 
-footer .footer-right > ul{
+.footer-right{
     display: flex;
 }
 
-footer .footer-right > ul > li:nth-of-type(2){
+.footer-right .footer-right-items:nth-of-type(2){
     margin: 8px 150px;
 }
 
-footer .footer-right > ul  li a{
+.footer-links-item{
+    margin: 8px 0;
+}
+
+footer a{
     text-decoration: none;
     color: #ffffff;
     font-size: 16px;
     font-weight: 400;
 }
 
-footer .footer-right > ul  li{
+.footer-right-items{
     margin: 8px 0;
 }
 
-.footer .footer-right h2{
+.footer-heading{
     font-size: 18px;
     line-height: 24px;
 }
 @media (max-width:1264px){
-    .gallery .container ul {
+    .gallery-items {
         overflow: auto;
         display: flex;
         flex-wrap: wrap;
@@ -568,10 +550,10 @@ footer .footer-right > ul  li{
         position: relative;
         z-index: -1;
     }
-    .gallery .container ul li img{
+    .item-details img{
         width: 75vw;
     }
-    .gallery .container ul li{
+    .item-details{
         margin: 10px 0 0 0 !important;
     }
 }
@@ -583,81 +565,50 @@ footer .footer-right > ul  li{
 }
 @media (max-width:992px) {
     header{
-        padding: 25px  12px;
+        padding: 25px ;
     }
     header.add-bg{
         transition: .5s;
         background-color: #0e1d28;
         padding: 25px 12px;
     }  
-    .hero-form *{
-        display: block;   
-    }
-
-    label[for*="click"]{
-        margin-bottom: 20px;
-    }
-
-    label[for*="click"]:before {
-        content: "";
-        position: absolute;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        border: 1px solid #ffffff;
-        display: inline-block;
-        transform: translateY(20px);
-    }
-
-    label[for="click1"] .placeholder-text{
-        transform: translate(40px,-10px);
-    }
-    label[for="click2"] .placeholder-text{
-        transform: translate(40px,75px);
-    }
-    input[type="radio"]#click1:checked + label::after{
-        transform: translate(5px,-10px);
-    }
-    input[type="radio"]#click2:checked + label::after{
-        transform: translate(5px,75px);
-    }
     a.search{
-        margin-top: 0;
+        margin-top: 20px;
     }
 
     .benefits{
         height: auto;
     }
-    .benefits > .container{
+    .benefits .container{
         background-color: #ffffff;
         position: static;
         box-shadow: 0 2px 20px rgba(21, 24, 36, 0.16);
         padding: 50px 12px;
     }
 
-    .benefits .container ul{
+    .benefits-details{
         text-align: center;
         flex-direction: column;
         align-items: center;
     }
-    .benefits .container ul li{
+    .benefits-items{
         width: 60%;
     }
-    .benefits .container ul li:nth-of-type(2n){
+    .benefits-items:nth-of-type(2n){
         margin: 20px 0;
     }
-    .best-places > .container ul{
+    .palce-name{
         flex-direction: column;
         align-items: center;
     }
-    .best-places > .container > ul li.places-content {
+    .places-content {
         padding: 26px 45px;
         width: 80%;
     }
-    .best-places > .container ul:nth-of-type(1) {
+    .palce-name:nth-of-type(1) {
         margin-bottom: 0;
     }
-    .top-places-to-visit .container ul{
+    .places-card{
         flex-direction: column;
         align-items: center;
     }
@@ -698,51 +649,46 @@ footer .footer-right > ul  li{
         align-items: center;
     }
 
-    header ul li{
-        margin: 25px 0;
+    .nav-items {
+        margin: 20px 0;
     }
 
-    header ul li a{
-        padding: 0;
-    }
-
-    .hide:not(.show){
+    .hide-on-mobile{
         transform: translate(100%);
     }
     
-    .hide:not(.show) + .burger .line1{
+    .hide-on-mobile + .burger .line1{
         display: block;
     }
 
-    .hide:not(.show) + .burger .line2{
+    .hide-on-mobile + .burger .line2{
         transform: rotate(0deg);
         transition: .5s;
     }
 
-    .hide:not(.show) + .burger .line3{
+    .hide-on-mobile+ .burger .line3{
         transform: rotate(0deg);
         transition: .5s;
     }
 
-    .show{
+    .show-on-mobile{
         transform: translate(0);
         transition: .5s ease-out ;
     }
 
-    .show + .burger .line1{
+    .show-on-mobile + .burger .line1{
         display: none;
     }
 
-    .show + .burger .line2{
+    .show-on-mobile + .burger .line2{
         transform: rotate(45deg);
         transition: .5s;
     }
 
-    .show + .burger .line3{
+    .show-on-mobile + .burger .line3{
         transform: rotate(315deg) translate(5px,-6px);
         transition: .5s;
     }
-
     
     .hero-content{
         padding:0 12px;
@@ -765,39 +711,20 @@ footer .footer-right > ul  li{
         margin-bottom: 20px;
     }
 
-    label:nth-of-type(1){
-        margin-bottom: 20px;
-    }
-
-    .custom-input{
-        width: 230px;
-    }
-
-    .placeholder-text{
-        width: 75%;
-        font-size: 14px;
-    }
-    label[for="click2"] .placeholder-text{
-        transform: translate(40px,75px);
-    }
-    input[type="radio"]#click2:checked + label::after{
-        transform: translate(5px,75px);
-    }
-
     a.search{
         padding: 14px 20px;
         font-size: 16px;
     }
-    .gallery .container .wrapper{
+    .wrapper{
         flex-direction: column;
         margin-bottom: 25px;
     }
-    .best-places > .container > ul li.places-content {
+    .places-content {
         padding: 25px;
         width: 100%;
     }
 
-    .best-places > .container > ul li img {
+    .palce-name img {
         width: 100%;
     }
 
@@ -805,15 +732,15 @@ footer .footer-right > ul  li{
         flex-direction: column;
     }
 
-    footer .footer-right > ul {
+    .footer-right{
         flex-direction: column;
     }
 
-    footer .footer-right > ul > li:nth-of-type(2) {
+    .footer-right .footer-right-items:nth-of-type(2) {
         margin: 8px 0;
     }
 
-    footer .footer-right > ul li{
+    .footer-right .footer-right-items{
         margin: 16px 0;
     }
 }
@@ -828,21 +755,22 @@ footer .footer-right > ul  li{
         padding: 35px 10px;
     }
 
-    .gallery .container ul li img {
+    .item-details img {
         width:100%;
     }
 
-    .gallery h2{
+    .heading{
         font-size: 22px;
         margin-bottom: 32px;
     }
     
-    .gallery h2::before{
+    .heading-underline::before{
         content: "";
         width: 150px;
-        height: 47px;
+        height: 3px;
     }
-    .gallery .container ul li img + p {
+
+    .place-name-gallery {
         bottom: 13px;
         left: 10px;
         font-size: 28px;
@@ -866,7 +794,29 @@ footer .footer-right > ul  li{
         border-bottom: 2px solid #006dfe;
     }
 
-    .top-places-to-visit ul li{
+    .card-item{
         width: 100%;
+    }
+}
+
+@media screen and (max-width:375px) {
+    .radio{
+        top:40px;
+        left: 10px;   
+    }
+    .survey-item {
+        display: inline-block;
+        width: 250px;
+        position: relative;
+    }   
+    .custom-text-input{
+        margin: 0 0 0 25px;
+    }
+    .question{
+        width: 100%;
+        right: -50px;
+    }
+    a.search{
+        display: inline-block;
     }
 }

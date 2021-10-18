@@ -9,31 +9,48 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body> 
+    <header>
+        <a href="javascript:void(0)" class="logo">
+            <img src="images/odigo_logo.svg" width="82" height="31" alt="Odigo Logo" />
+        </a>
+        <ul class="hide-on-mobile nav-links">
+            <li class="nav-items"><a href="#article">Articles</a></li>
+            <li class="nav-items"><a href="#locations">Locations</a></li>
+            <li class="nav-items"><a href="#videos">Videos</a></li>
+            <li class="nav-items"><a href="#signin">Sign in</a></li>
+        </ul>
+        <div class="burger" onclick="navigation()">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </header>
     <section class="hero">
-        <header>
-            <a href="javascript:void(0)">
-                <img src="images/odigo_logo.svg" width="82" height="31" alt="Odigo Logo" />
-            </a>
-            <ul class="hide">
-                <li><a href="javascript:void(0)">Articles</a></li>
-                <li><a href="javascript:void(0)">Locations</a></li>
-                <li><a href="javascript:void(0)">Videos</a></li>
-                <li><a href="javascript:void(0)">Sign in</a></li>
-            </ul>
-            <div class="burger" onclick="navigation()">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
-        </header>
-
         <div class="container">
             <div class="hero-content">
             <h1>Discover Amazing places in Japan</h1>
                 <p>Jump off balcony, onto stranger's head. Chase ball of string hide when guests come over. Being gorgeous with belly side up i could pee on this if i had the energy but under the bed, for attack the child, open the door, </p>
-                <form class="hero-form" method="post">
-                    
-                    <input name="option" id="click1" type="radio">
+                <form class="hero-form" method="post">  
+                    <ul class="survey">
+                        <li class="survey-item">
+                            <label class="radio-button">
+                                <input type="radio" name="questions">
+                                <span class="radio"></span>
+                                <input type="text" class="custom-text-input">
+                                <span class="question">What would you like to do?</span>
+                            </label>
+                        </li>
+                        <li class="survey-item">
+                            <label class="radio-button">
+                                <input type="radio" name="questions">
+                                <span class="radio"></span>
+                                <input type="text" class="custom-text-input">
+                                <span class="question">Where would you like to go?</span>
+                            </label>
+                        </li>                        
+                    </ul>                    
+                    <a href="javascript:void(0)" class="search">Search</a>
+                    <!-- <input name="option" id="click1" type="radio">
                     <label for="click1">
                         <input type="text" class="custom-input"> 
                         <span class="placeholder-text">What would you like to do?</span>
@@ -43,71 +60,109 @@
                     <label for="click2">
                         <input type="text" class="custom-input">
                         <span class="placeholder-text">Where would you like to go?</span>
-                    </label>
-                    
-                    <a href="javascript:void(0)" class="search">Search</a>
+                    </label> -->
                 </form>
             </div>
         </div>
     </section>
 
-    <section class="benefits">
+    <section class="benefits" id="article">
         <div class="container">
-            <h2>Benefits of Odigo</h2>
-            <ul>
-                <li>
+            <h2 class="heading">Benefits of Odigo</h2>
+            <ul class="benefits-details">
+                <li class="benefits-items">
                     <img src="images/temple.png" width="66" height="66" alt="Temple" />
-                    <h5>Welcome to Odigo!</h5>
-                    <p>Jump off balcony, onto stranger's head. Chase ball of string hide when guests come over.</p>
-                    <a href="javascript:void(0)">LEARN MORE <span><i class="fas fa-long-arrow-alt-right"></i></span></a>
+                    <h5 class="benefits-subheading">Welcome to Odigo!</h5>
+                    <p class="benefits-description">Jump off balcony, onto stranger's head. Chase ball of string hide when guests come over.</p>
+                    <a href="javascript:void(0)" class="more-link">LEARN MORE <span><i class="fas fa-long-arrow-alt-right arrow-icons"></i></span></a>
                 </li>
-                <li>
+                <li class="benefits-items">
                     <img src="images/guide.png" width="65" height="65" alt="Guide" />
-                    <h5>Your Personal Japan Guide</h5>
-                    <p>Jump off balcony, onto stranger's head. Chase ball of string hide when guests come over.</p>
-                    <a href="javascript:void(0)">LEARN MORE <span><i class="fas fa-long-arrow-alt-right"></i></span></a>
+                    <h5 class="benefits-subheading">Your Personal Japan Guide</h5>
+                    <p class="benefits-description">Jump off balcony, onto stranger's head. Chase ball of string hide when guests come over.</p>
+                    <a href="javascript:void(0)" class="more-link">LEARN MORE <span><i class="fas fa-long-arrow-alt-right arrow-icons"></i></span></a>
                 </li>
-                <li>
+                <li class="benefits-items">
                     <img src="images/local-business.png" width="58" height="58" alt="Local-business" />
-                    <h5>Promoting Local Businesses</h5>
-                    <p>Jump off balcony, onto stranger's head. Chase ball of string hide when guests come over.</p>
-                    <a href="javascript:void(0)">LEARN MORE <span><i class="fas fa-long-arrow-alt-right"></i></span></a>
+                    <h5 class="benefits-subheading">Promoting Local Businesses</h5>
+                    <p class="benefits-description">Jump off balcony, onto stranger's head. Chase ball of string hide when guests come over.</p>
+                    <a href="javascript:void(0)" class="more-link">LEARN MORE <span><i class="fas fa-long-arrow-alt-right arrow-icons"></i></span></a>
                 </li>
             </ul>
         </div>
     </section>
 
-    <section class="gallery">
+    <section class="gallery" id="locations">
         <div class="container">
             <div class="wrapper">
-                <h2>Get inspired for your next trip</h2>
-                <a href="javascript:void(0)">VIEW ALL <span><i class="fas fa-long-arrow-alt-right"></i></span></a>
+                <h2 class="heading heading-underline">Get inspired for your next trip</h2>
+                <a href="javascript:void(0)" class="more-link">VIEW ALL <span><i class="fas fa-long-arrow-alt-right arrow-icons"></i></span></a>
             </div>
-            <ul>
-                <li>
-                    <div class="overlay"></div>
-                    <img src="images/mount-fuji.png" width="619" height="354"alt="Mount fuji">
-                    <p>Mount Fuji</p>
+            <ul class="gallery-items">
+                <li class="item-details">
+                    <div class="overlay-gallery"></div>
+                    <img 
+                        src="images/mount-fuji.png" 
+                        srcset="images/mount-fuji.png 619w,
+                                images/mount-fuji@2x.png 1238w,
+                                images/mount-fuji@3x.png 1857w"
+                        width="619" 
+                        height="354"
+                        alt="mount-fuji"
+                    />
+                    <p class="place-name-gallery">Mount Fuji</p>
                 </li>
-                <li>
-                    <div class="overlay"></div>
-                    <img src="images/kyoto.png" width="635" height="354" alt="Kyoto">
-                    <p>Kyoto</p>
+                <li class="item-details">
+                    <div class="overlay-gallery"></div>
+                    <img 
+                        src="images/kyoto.png" 
+                        srcset="images/kyoto.png 635w,
+                                images/kyoto@2x.png 1270w,
+                                images/kyoto@3x.png 1905w"
+                        width="635" 
+                        height="354" 
+                        alt="Kyoto"
+                    />
+                    <p class="place-name-gallery">Kyoto</p>
                 </li>
-                <li>
-                    <div class="overlay"></div>
-                    <img src="images/tokyo.png" width="415" height="283" alt="Tokyo" />
-                    <p>Tokyo</p>
+                <li class="item-details">
+                    <div class="overlay-gallery"></div>
+                    <img 
+                        src="images/tokyo.png" 
+                        srcset="images/tokyo.png 415w,
+                                images/tokyo@2x.png 830w,
+                                images/tokyo@3x.png 1245w"
+                        width="415" 
+                        height="283" 
+                        alt="Tokyo" 
+                    />
+                    <p class="place-name-gallery">Tokyo</p>
                 </li>
-                <li>
-                    <div class="overlay"></div>
-                    <img src="images/niigata.png" width="415" height="283" alt="Niigata" />
-                    <p>Niigata</p>
+                <li class="item-details">
+                    <div class="overlay-gallery"></div>
+                    <img 
+                        src="images/niigata.png" 
+                        srcset="images/niigata.png 415w,
+                                images/niigata@2x.png 830w,
+                                images/niigata@3x.png 1245w"
+                        width="415" 
+                        height="283" 
+                        alt="Niigata" 
+                    />
+                    <p class="place-name-gallery">Niigata</p>
                 </li>
-                <li>
-                    <div class="overlay"></div>
-                    <img src="images/sapporo.png" width="414" height="283" alt="Sapporo" />
-                    <p>Sapporo</p>
+                <li class="item-details">
+                    <div class="overlay-gallery"></div>
+                    <img 
+                        src="images/sapporo.png" 
+                        srcset="images/sapporo.png 414w,
+                                images/sapporo@2x.png 828w,
+                                images/sapporo@3x.png 1242w"
+                        width="414" 
+                        height="283" 
+                        alt="Sapporo" 
+                    />
+                    <p class="place-name-gallery">Sapporo</p>
                 </li>
             </ul>
         </div>
@@ -115,26 +170,42 @@
 
     <section class="best-places">
         <div class="container">
-            <ul>
+            <ul class="palce-name">
                 <li>
-                    <img src="images/tottori.png" width="597" height="354" alt="Tottori" />
+                    <img 
+                        src="images/tottori.png" 
+                        srcset="images/tottori.png 597w,
+                                images/tottori@2x.png 1194w,
+                                images/tottori@3x.png 1791w"
+                        width="597" 
+                        height="354" 
+                        alt="Tottori" 
+                    />
                 </li>
                 <li class="places-content">
-                    <h3>Prefecture in Focus :</h3>
-                    <h2>Tottori</h2>
-                    <p>Jump off balcony, onto stranger's head. Chase ball of string hide when guests come over. Being gorgeous with belly side up i could pee on this if i had the energy but under the bed, for attack the child, open the door, </p>
-                    <a href="javascript:void(0)">VIEW PREFECTURE <span><i class="fas fa-long-arrow-alt-right"></i></span></a>
+                    <h3 class="place-feature">Prefecture in Focus :</h3>
+                    <h2 class="place-heading">Tottori</h2>
+                    <p class="place-description">Jump off balcony, onto stranger's head. Chase ball of string hide when guests come over. Being gorgeous with belly side up i could pee on this if i had the energy but under the bed, for attack the child, open the door, </p>
+                    <a href="javascript:void(0)" class="more-link">VIEW PREFECTURE <span><i class="fas fa-long-arrow-alt-right arrow-icons"></i></span></a>
                 </li>
             </ul>
-            <ul>
+            <ul class="palce-name">
                 <li class="places-content">
-                    <h3>Featured Neighborhood:</h3>
-                    <h2>Kyoto’s Arashiyama</h2>
-                    <p>Jump off balcony, onto stranger's head. Chase ball of string hide when guests come over. Being gorgeous with belly side up i could pee on this if i had the energy but under the bed, for attack the child, open the door, </p>
-                    <a href="javascript:void(0)">VIEW NEIGHBORHOOD <span><i class="fas fa-long-arrow-alt-right"></i></span></a>
+                    <h3 class="place-feature">Featured Neighborhood:</h3>
+                    <h2 class="place-heading">Kyoto’s Arashiyama</h2>
+                    <p class="place-description">Jump off balcony, onto stranger's head. Chase ball of string hide when guests come over. Being gorgeous with belly side up i could pee on this if i had the energy but under the bed, for attack the child, open the door, </p>
+                    <a href="javascript:void(0)" class="more-link">VIEW NEIGHBORHOOD <span><i class="fas fa-long-arrow-alt-right arrow-icons"></i></span></a>
                 </li>
                 <li>
-                    <img src="images/kyoto_arashiyama.png" width="597" height="354" alt="Kyoto Arashiyama" />
+                    <img 
+                        src="images/kyoto_arashiyama.png" 
+                        srcset="images/kyoto_arashiyama.png 597w,
+                                images/kyoto_arashiyama@2x.png 1194w,
+                                images/kyoto_arashiyama@3x.png 1791w"
+                        width="597" 
+                        height="354" 
+                        alt="Kyoto Arashiyama" 
+                    />
                 </li>
             </ul>
         </div>
@@ -142,11 +213,19 @@
 
     <section class="top-places-to-visit">
         <div class="container">
-            <h2>Today top places to visit</h2>
-            <ul>
-                <li>
+            <h2 class="heading heading-underline">Today top places to visit</h2>
+            <ul class="places-card">
+                <li class="card-item">
                     <div class="card-show">
-                        <img src="images/nagoya_card.png" width="386" height="377" alt="Nagoya" />
+                        <img 
+                            src="images/nagoya_card.png" 
+                            srcset="images/nagoya_card.png 386w,
+                                    images/nagoya_card@2x.png 772w,
+                                    images/nagoya_card@3x.png 1158w"
+                            width="386" 
+                            height="377" 
+                            alt="Nagoya" 
+                        />
                         <div class="overlay-wrapper">
                             <div class="place-name">
                                 <p>Nagoya</p>
@@ -158,11 +237,19 @@
                         </div>
                     </div>
                     <p class="description">Jump off balcony, onto stranger's head. Chase ball of string hide when guests come over. Being gorgeous with belly side up i could pee on this.</p>
-                    <a href="javascript:void(0)">SEE MORE</a>
+                    <a href="javascript:void(0)" class="see-more">SEE MORE</a>
                 </li>
-                <li>
+                <li class="card-item">
                     <div class="card-show">
-                        <img src="images/niigata_card.png" width="386" height="377" alt="Niigata" />
+                        <img 
+                            src="images/niigata_card.png" 
+                            srcset="images/niigata_card.png 386w,
+                                    images/niigata_card@2x.png 772w,
+                                    images/niigata_card@3x.png 1158w"
+                            width="386" 
+                            height="377" 
+                            alt="Niigata" 
+                        />
                         <div class="overlay-wrapper">
                             <div class="place-name">
                                 <p>Niigata</p>
@@ -173,12 +260,20 @@
                             </div>
                         </div>
                     </div>
-                    <p>Jump off balcony, onto stranger's head. Chase ball of string hide when guests come over. Being gorgeous with belly side up i could pee on this.</p>
-                    <a href="javascript:void(0)">SEE MORE</a>
+                    <p class="description">Jump off balcony, onto stranger's head. Chase ball of string hide when guests come over. Being gorgeous with belly side up i could pee on this.</p>
+                    <a href="javascript:void(0)" class="see-more">SEE MORE</a>
                 </li>
-                <li>
+                <li class="card-item">
                     <div class="card-show">
-                        <img src="images/osaka_card.png" width="386" height="377" alt="Osaka" />
+                        <img 
+                            src="images/osaka_card.png" 
+                            srcset="images/osaka_card.png 386w,
+                                    images/osaka_card.png 772w,
+                                    images/osaka_card.png 1158w"
+                            width="386" 
+                            height="377" 
+                            alt="Osaka" 
+                        />
                         <div class="overlay-wrapper">
                             <div class="place-name">
                                 <p>Osaka</p>
@@ -189,12 +284,20 @@
                             </div>
                         </div>
                     </div>
-                    <p>Jump off balcony, onto stranger's head. Chase ball of string hide when guests come over. Being gorgeous with belly side up i could pee on this.</p>
-                    <a href="javascript:void(0)">SEE MORE</a>
+                    <p class="description">Jump off balcony, onto stranger's head. Chase ball of string hide when guests come over. Being gorgeous with belly side up i could pee on this.</p>
+                    <a href="javascript:void(0)" class="see-more">SEE MORE</a>
                 </li>
-                <li>
+                <li class="card-item">
                     <div class="card-show">
-                        <img src="images/saitama_card.png" width="386" height="377" alt="Saitama" />
+                        <img 
+                            src="images/saitama_card.png" 
+                            srcset="images/saitama_card.png 386w,
+                                    images/saitama_card@2x.png 772w,
+                                    images/saitama_card@3x.png 1158w"
+                            width="386" 
+                            height="377" 
+                            alt="Saitama" 
+                        />
                         <div class="overlay-wrapper">
                             <div class="place-name">
                                 <p>Saitama</p>
@@ -205,12 +308,20 @@
                             </div>
                         </div>
                     </div>
-                    <p>Jump off balcony, onto stranger's head. Chase ball of string hide when guests come over. Being gorgeous with belly side up i could pee on this.</p>
-                    <a href="javascript:void(0)">SEE MORE</a>
+                    <p class="description">Jump off balcony, onto stranger's head. Chase ball of string hide when guests come over. Being gorgeous with belly side up i could pee on this.</p>
+                    <a href="javascript:void(0)" class="see-more">SEE MORE</a>
                 </li>
-                <li>
+                <li class="card-item">
                     <div class="card-show">
-                        <img src="images/ueno_card.png" width="386" height="377" alt="Ueno" />
+                        <img 
+                            src="images/ueno_card.png" 
+                            srcset="images/ueno_card.png 386w,
+                                    images/ueno_card.png 772w,
+                                    images/ueno_card.png 1158w"
+                            width="386" 
+                            height="377" 
+                            alt="Ueno" 
+                        />
                         <div class="overlay-wrapper">
                             <div class="place-name">
                                 <p>Ueno</p>
@@ -221,12 +332,20 @@
                             </div>
                         </div>
                     </div>
-                    <p>Jump off balcony, onto stranger's head. Chase ball of string hide when guests come over. Being gorgeous with belly side up i could pee on this.</p>
-                    <a href="javascript:void(0)">SEE MORE</a>
+                    <p class="description">Jump off balcony, onto stranger's head. Chase ball of string hide when guests come over. Being gorgeous with belly side up i could pee on this.</p>
+                    <a href="javascript:void(0)" class="see-more">SEE MORE</a>
                 </li>
-                <li>
+                <li class="card-item">
                     <div class="card-show">
-                        <img src="images/shibuya_card.png" width="386" height="377" alt="Shibuya" />
+                        <img 
+                            src="images/shibuya_card.png" 
+                            srcset="images/shibuya_card.png 386w,
+                                    images/shibuya_card@2x.png 772w,
+                                    images/shibuya_card@3x.png 1158w"
+                            width="386" 
+                            height="377" 
+                            alt="Shibuya" 
+                        />
                         <div class="overlay-wrapper">
                             <div class="place-name">
                                 <p>Shibuya</p>
@@ -237,14 +356,14 @@
                             </div>
                         </div>
                     </div>
-                    <p>Jump off balcony, onto stranger's head. Chase ball of string hide when guests come over. Being gorgeous with belly side up i could pee on this.</p>
-                    <a href="javascript:void(0)">SEE MORE</a>
+                    <p class="description">Jump off balcony, onto stranger's head. Chase ball of string hide when guests come over. Being gorgeous with belly side up i could pee on this.</p>
+                    <a href="javascript:void(0)" class="see-more">SEE MORE</a>
                 </li>
             </ul>
         </div> 
     </section>
 
-    <section class="video">
+    <section class="video" id="videos">
         <iframe src="https://www.youtube.com/embed/CWYKpwlVGso" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </section>
 
@@ -252,37 +371,35 @@
         <div class="footer-left">
             <img src="images/odigo_logo.svg" width="150" height="56" alt="Odigo Logo" />
         </div>
-        <div class="footer-right">
-            <ul>
-                <li>
-                    <h2>Company</h2>
-                    <ul>
-                        <li><a href="javascript:void(0)">About</a></li>
-                        <li><a href="javascript:void(0)">Team</a></li>
-                        <li><a href="javascript:void(0)">Careers</a></li>
-                        <li><a href="javascript:void(0)">Privacy Policy</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <h2>Locations</h2>
-                    <ul>
-                        <li><a href="javascript:void(0)">Tokyo</a></li>
-                        <li><a href="javascript:void(0)">Kyoto</a></li>
-                        <li><a href="javascript:void(0)">Osaka</a></li>
-                        <li><a href="javascript:void(0)">Hokkaido</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <h2>Social Media</h2>
-                    <ul>
-                        <li><a href="javascript:void(0)">Facebook</a></li>
-                        <li><a href="javascript:void(0)">Twitter</a></li>
-                        <li><a href="javascript:void(0)">Instagram</a></li>
-                        <li><a href="javascript:void(0)">Youtube</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
+        <ul class="footer-right">
+            <li class="footer-right-items">
+                <h2 class="footer-heading">Company</h2>
+                <ul class="footer-links">
+                    <li class="footer-links-item"><a href="javascript:void(0)">About</a></li>
+                    <li class="footer-links-item"><a href="javascript:void(0)">Team</a></li>
+                    <li class="footer-links-item"><a href="javascript:void(0)">Careers</a></li>
+                    <li class="footer-links-item"><a href="javascript:void(0)">Privacy Policy</a></li>
+                </ul>
+            </li>
+            <li class="footer-right-items">
+                <h2 class="footer-heading">Locations</h2>
+                <ul class="footer-links">
+                    <li class="footer-links-item"><a href="javascript:void(0)">Tokyo</a></li>
+                    <li class="footer-links-item"><a href="javascript:void(0)">Kyoto</a></li>
+                    <li class="footer-links-item"><a href="javascript:void(0)">Osaka</a></li>
+                    <li class="footer-links-item"><a href="javascript:void(0)">Hokkaido</a></li>
+                </ul>
+            </li>
+            <li class="footer-right-items">
+                <h2 class="footer-heading">Social Media</h2>
+                <ul class="footer-links">
+                    <li class="footer-links-item"><a href="javascript:void(0)">Facebook</a></li>
+                    <li class="footer-links-item"><a href="javascript:void(0)">Twitter</a></li>
+                    <li class="footer-links-item"><a href="javascript:void(0)">Instagram</a></li>
+                    <li class="footer-links-item"><a href="javascript:void(0)">Youtube</a></li>
+                </ul>
+            </li>
+        </ul>
     </footer>
     <script src="index.js"></script>
 </body>
