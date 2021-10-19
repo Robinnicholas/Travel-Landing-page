@@ -20,6 +20,13 @@ function customInputchange(){
     }
 }
 
+function video(){
+    let videoBtn = document.querySelector(".video");
+    let videoStatus = document.querySelector(".paused");
+    return videoStatus = videoStatus ? videoBtn.classList.replace("paused","playing") : videoBtn.classList.replace("playing" , "paused");
+    
+}
+
 function headerScroll(){
     window.addEventListener('scroll', () => {
         let header = document.querySelector("header");
@@ -36,4 +43,5 @@ function headerScroll(){
 window.addEventListener('load', () => {
     customInputchange();    
     headerScroll();
+    video();
 })
