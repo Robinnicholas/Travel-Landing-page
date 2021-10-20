@@ -329,7 +329,7 @@ button.search:hover{
 .gallery-items{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .gallery-items a{
@@ -341,6 +341,7 @@ button.search:hover{
 .gallery-items li{
     position: relative;
     margin-bottom: 10px ;
+    margin-right: 10px ;
 }
 
 .gallery-items li img{
@@ -583,6 +584,15 @@ footer a{
 .footer-topics h2{
     font-size: 18px;
     line-height: 24px;
+}
+
+@media (max-width:1024px) {
+    .gallery-items{
+        justify-content: space-around;   
+    }
+    .gallery-items li{
+        margin-right: 0;
+    }
 }
 
 @media (max-width:1250px) {
