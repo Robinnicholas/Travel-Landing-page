@@ -884,6 +884,10 @@ footer a{
     }
 }
 @media (max-width:572px){
+    button.search{
+        font-size: 18px;
+        padding: 15px 28px;
+    }
     .benefits-items{
         width: 100%;
         margin-bottom: 75px;
