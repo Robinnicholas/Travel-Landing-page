@@ -13,7 +13,7 @@
         <a href="javascript:void(0)" class="logo">
             <img src="images/odigo_logo.svg" width="82" alt="Odigo Logo" />
         </a>
-        <ul class="hide-on-mobile nav-links">
+        <ul class="nav-links">
             <li class="nav-items"><a href="#article">Articles</a></li>
             <li class="nav-items"><a href="#locations">Locations</a></li>
             <li class="nav-items"><a href="#videos">Videos</a></li>
@@ -81,27 +81,25 @@
                 <a href="javascript:void(0)" class="more-link">VIEW ALL <i class="fas fa-long-arrow-alt-right arrow-icons"></i></a>
             </div>
             <ul class="gallery-items">
-                <li class="col-2">
+                <li class="col-2 small">
                     <a href="javasacript:void(0)">
                         <img 
                             src="images/mount-fuji.png" 
                             srcset="images/mount-fuji.png 1x,
                                     images/mount-fuji@2x.png 2x,
                                     images/mount-fuji@3x.png 3x"
-                            height="354"
                             alt="mount-fuji"
                             />
                         <h3 class="place-name-gallery">Mount Fuji</h3>
                     </a>
                 </li>
-                <li class="col-2">
+                <li class="col-2 big">
                     <a href="javasacript:void(0)">
                         <img 
                             src="images/kyoto.png" 
                             srcset="images/kyoto.png 1x,
                             images/kyoto@2x.png 2x,
                             images/kyoto@3x.png 3x"
-                            height="354"
                             alt="Kyoto"
                         />
                         <h3 class="place-name-gallery">Kyoto</h3>
@@ -114,7 +112,6 @@
                             srcset="images/tokyo.png 1x,
                             images/tokyo@2x.png 2x,
                             images/tokyo@3x.png 3x"
-                            width="415" 
                             alt="Tokyo" 
                             />
                         <h3 class="place-name-gallery">Tokyo</h3>
@@ -127,7 +124,6 @@
                             srcset="images/niigata.png 1x,
                             images/niigata@2x.png 2x,
                             images/niigata@3x.png 3x"
-                            width="415" 
                             alt="Niigata" 
                         />
                         <h3 class="place-name-gallery">Niigata</h3>
@@ -140,7 +136,6 @@
                             srcset="images/sapporo.png 1x,
                             images/sapporo@2x.png 2x,
                             images/sapporo@3x.png 3x"
-                            width="414" 
                             alt="Sapporo" 
                         />
                         <h3 class="place-name-gallery">Sapporo</h3>
@@ -333,12 +328,13 @@
         </div> 
     </section>
 
-    <section class="video paused" onclick="video()" id="videos">
+    <section class="video paused" id="videos">
         <a href="javascript:void(0)">
-            <video poster="images/video.jpg" height="610"></video>
+            <video onclick="video()" poster="images/video.jpg" height="610">
+                <source src="images/fireworks.mp4" type="video/mp4">
+            </video>
         </a>
-        <i class="fas fa-play-circle"></i>
-        <i class="fas fa-pause-circle"></i>
+        <i class="fas fa-play-circle" onclick="video()"></i>
     </section>
 
     <footer>

@@ -1,8 +1,6 @@
 function navigation(){
     let nav = document.querySelector('.nav-links');
-    let hide = nav.classList.contains("hide-on-mobile");
-    return hide = hide ? nav.classList.replace("hide-on-mobile", "show-on-mobile") : 
-    nav.classList.replace("show-on-mobile", "hide-on-mobile");
+    return nav.classList.toggle("show-on-mobile");
 }
 
 function customInputchange(){
@@ -21,27 +19,25 @@ function customInputchange(){
 }
 
 function video(){
-    let videoBtn = document.querySelector(".video");
-    let videoStatus = document.querySelector(".paused");
-    return videoStatus = videoStatus ? videoBtn.classList.replace("paused","playing") : videoBtn.classList.replace("playing" , "paused");
-    
+    let videoSection = document.querySelector(".video");
+    let videoTag = document.querySelector("video");
+    if(videoTag.paused){
+        videoTag.play()
+        videoSection.classList.replace("paused", "playing"); 
+    } else{
+        videoTag.pause();
+        videoSection.classList.replace("playing", "paused"); 
+    }
 }
 
 function headerScroll(){
     window.addEventListener('scroll', () => {
         let header = document.querySelector("header");
-        let heroContent = document.querySelector(".hero-content");
-        if( header.clientHeight > heroContent.getBoundingClientRect().top){
-            header.classList.add("add-bg");
-        }
-        if(document.body.getBoundingClientRect().y == 0){
-            header.classList.remove("add-bg");
-        }
+        return (window.scrollY > 80) ? header.classList.add("add-bg") : header.classList.remove("add-bg");
     })
 }
 
 window.addEventListener('load', () => {
     customInputchange();    
     headerScroll();
-    video();
 })

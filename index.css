@@ -293,8 +293,7 @@ button.search:hover{
     background-color: #ffffff;
     padding: 93px 63px 112px 100px;
     position: relative;
-    bottom: 20vh;
-    margin-bottom: calc(-20vh + 70px);
+    margin-top: -20vh;
     box-shadow: 0 2px 20px rgba(21, 24, 36, 0.16);
 }
 
@@ -329,7 +328,7 @@ button.search:hover{
 .gallery-items{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
 .gallery-items a{
@@ -337,25 +336,46 @@ button.search:hover{
     position: relative;
 }
 
-
-.gallery-items li{
-    position: relative;
-    margin-bottom: 10px ;
-    margin-right: 10px ;
+/* gallary top two  */
+.gallery-items li.col-2 img{
+    height: 100%;
 }
 
-.gallery-items li img{
+.gallery-items li.col-2.small{
+    width: 48%;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.gallery-items li.col-2.small img{
+    width:100%;
+}
+
+.gallery-items li.col-2.big{
+    width: 50%;
+    margin-bottom: 10px;
+}
+
+.gallery-items li.col-2.big img{
     width: 100%;
 }
+/* gallary top two  */
 
-.gallery-items li.col-2{
-    width: 49%;
-}
-
+/* gallary bottom three  */
 .gallery-items li.col-3{
-    width: 32%;
-    margin-bottom: 0;
+    width:32%;
+    margin-right: 10px;
 }
+
+.gallery-items li.col-3:last-child{
+    margin-right: 0;
+}
+
+.gallery-items li.col-3 img{
+    width: 100%;
+    height: 100%;
+}
+/* gallary bottom three  */
 
 .gallery-items li a::before{
     content: "";
@@ -400,13 +420,14 @@ button.search:hover{
 .place-details img{
     object-fit: cover;
     width: 50%;
+    height: 100%;
 }
 
 .place-content{
     width: 40%;
 }
 
-h3{
+.place-content h3{
     font-size: 30px;
     line-height: 40px;
     color: #102746;
@@ -422,7 +443,7 @@ h3{
     line-height: 24px;
     color: #102746;
     margin-bottom: 58px;
-    padding:1px;
+    padding:3px;
 }
 
 /* top places to visit */
@@ -509,15 +530,15 @@ h3{
 
 .video video{
     width: 100%;
-    object-fit: cover;
+    height: 100%;
+    object-fit: contain;
 }
 
 .video{
     position: relative;
 }
 
-.fa-play-circle,
-.fa-pause-circle{
+.fa-play-circle{
     position: absolute;
     left: 50%;
     top: 50%;
@@ -526,20 +547,16 @@ h3{
     color: #ffffff;
 }
 
-.paused .fa-pause-circle{
+.playing a::before{
+    background-color: unset;
+}
+
+.playing .fa-play-circle{
     display: none;
 }
 
 .paused .fa-play-circle{
     display: block;
-}
-
-.playing .fa-pause-circle{
-    display: block;
-}
-
-.playing .fa-play-circle{
-    display: none;
 }
 
 
@@ -586,6 +603,15 @@ footer a{
     line-height: 24px;
 }
 
+@media (max-width:1208px) {
+    .places-card{
+        justify-content: center;
+    }    
+    .places-card li{
+        margin-right: 58px;
+    }
+}
+
 @media (max-width:1024px) {
     .gallery-items{
         justify-content: space-around;   
@@ -599,6 +625,12 @@ footer a{
     .footer-topics > li:first-child{
         margin: 8px 0;
     }   
+}
+
+@media (max-width:1099px) {
+    footer{
+        padding: 45px 12px;
+    }
 }
 
 @media (max-width:992px) {
@@ -677,6 +709,9 @@ footer a{
     .place-name-gallery{
         font-size: 28px;
     }
+    .places-card li{
+        margin-right: 0;
+    }
     .best-places{
         padding: 45px 12px;
     }
@@ -699,6 +734,7 @@ footer a{
     }
     .place-details img {
         width: 100%;
+        height: 100%;
     }
     .place-details:nth-of-type(1) {
         margin-bottom: 24px;
@@ -795,20 +831,20 @@ footer a{
         margin: 20px 0;
     }
 
-    .hide-on-mobile{
+    .nav-links{
         transform: translate(100%);
     }
     
-    .hide-on-mobile + .burger .line1{
+    .nav-links + .burger .line1{
         display: block;
     }
 
-    .hide-on-mobile + .burger .line2{
+    .nav-links + .burger .line2{
         transform: rotate(0deg);
         transition: .5s;
     }
 
-    .hide-on-mobile+ .burger .line3{
+    .nav-links + .burger .line3{
         transform: rotate(0deg);
         transition: .5s;
     }
@@ -865,16 +901,20 @@ footer a{
     .gallery{
         padding: 25px 12px;
     }
-    
-    footer,
-    .footer-topics{
+    footer{
         flex-direction: column;
+        align-items: center;
     }
     .footer-topics{
+        display: unset;
+        text-align: center;
         margin-top: 25px ;
     }
+    .footer-topics h2{
+        margin: 16px 0;
+    }
     .footer-topics > li{
-        margin: 8px 0;
+        margin: 30px 0;
     }
 }
 
@@ -898,8 +938,8 @@ footer a{
     .gallery-items{
         flex-direction: column;
     }
-    .gallery-items li.col-2 {
-        width: 100%;
+    .gallery-items li.col-2{
+        width: 100% !important;
     }
     .gallery-items li.col-3 {
         width: 100%;
