@@ -685,8 +685,7 @@ footer a{
     }
     .benefits.container{
         padding: 25px 12px;
-        bottom: 0;
-        margin-bottom: 0;
+        margin-top: 0;
     }
     .benefits-items img {
         margin-bottom: 22px;
@@ -998,6 +997,9 @@ footer a{
     }
     .places-card li{
         width: 100%;
+    }
+    .fa-play-circle{
+        font-size: 50px;
     }
 }
 
