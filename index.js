@@ -33,7 +33,7 @@ function video(){
 function headerScroll(){
     window.addEventListener('scroll', () => {
         let header = document.querySelector("header");
-        return (window.scrollY > 80) ? header.classList.add("add-bg") : header.classList.remove("add-bg");
+        return (window.scrollY > 43) ? header.classList.add("add-bg") : header.classList.remove("add-bg");
     })
 }
 
