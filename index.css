@@ -312,6 +312,8 @@ button.search:hover{
 }
 
 .benefits-items img{
+    width: 66px;
+    height: 66px;
     margin-bottom: 37px ;
 }
 
